@@ -14,7 +14,7 @@ export interface NewsItem {
 }
 
 export interface NewsResponse {
-  staus: string;
+  status: string;
   totalResults: number;
   articles: NewsItem[];
 }

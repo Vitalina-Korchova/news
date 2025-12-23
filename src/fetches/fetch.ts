@@ -1,14 +1,22 @@
+import type { NewsResponse } from "@/types/interface";
+
 type DataProps = {
   type: "top-headlines" | "everything";
   search?: string;
   category?: string;
 };
-export async function getDataNews({ type, search, category }: DataProps) {
+
+const myApiKey = "da6350670d0b443382d1a4a492dc5581";
+export async function getDataNews({
+  type,
+  search,
+  category,
+}: DataProps): Promise<NewsResponse> {
   let url = "";
   if (type === "top-headlines") {
-    url = `https://newsapi.org/v2/top-headlines?category=${category}`;
+    url = `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${myApiKey}`;
   } else {
-    url = `https://newsapi.org/v2/everything?q=${search}`;
+    url = `https://newsapi.org/v2/everything?q=${search}&apiKey=${myApiKey}`;
   }
 
   try {
@@ -16,11 +24,9 @@ export async function getDataNews({ type, search, category }: DataProps) {
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
-    const result = await response.json();
-    console.log(result);
-    return result;
+    return response.json();
   } catch (error) {
     console.log("Error while getting data news", error);
-    return [];
+    throw error;
   }
 }
