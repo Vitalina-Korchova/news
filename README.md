@@ -1,6 +1,6 @@
 #  News App – A Mini app about News
 
-🔗 **Live Demo:** [Play Now](https://vitalina-korchova.github.io/battleships-game/)
+🔗 **Live Demo:** [Visit](https://vitalina-korchova.github.io/news/)
 
 ---
 
