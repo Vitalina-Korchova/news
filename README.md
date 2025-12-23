@@ -1,6 +1,5 @@
 #  News App – A Mini app about News
 
-🔗 **Live Demo:** [Visit](https://vitalina-korchova.github.io/news/)
 
 ---
 
